@@ -50,9 +50,9 @@ Item {
             Text {
                 width: parent.width
                 height: parent.height
-                text: qsTr("Buttons Background color selector")
+                text: qsTr("Buttons Background \ncolor selector")
                 font.family: "arial"
-                font.pointSize: 14
+                font.pointSize: 17
                 font.weight: Font.ExtraBold
                 color: window.selectedSecondColor
                 verticalAlignment: Text.AlignVCenter
@@ -73,7 +73,7 @@ Item {
                 height: parent.height
                 text: qsTr("Dynamic property")
                 font.family: "arial"
-                font.pointSize: 14
+                font.pointSize: 17
                 font.weight: Font.ExtraBold
                 color: window.selectedSecondColor
                 verticalAlignment: Text.AlignVCenter
@@ -94,7 +94,7 @@ Item {
                 height: parent.height
                 text: qsTr("Buttons Text color selector")
                 font.family: "arial"
-                font.pointSize: 14
+                font.pointSize: 17
                 font.weight: Font.ExtraBold
                 color: window.selectedSecondColor
                 verticalAlignment: Text.AlignVCenter

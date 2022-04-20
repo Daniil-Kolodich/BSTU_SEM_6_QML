@@ -8,22 +8,21 @@
 #include <stdio.h>
 #include <string>
 #include <iostream>
-SystemScripts::SystemScripts(QObject *parent) : QObject(parent)
-{
-
-}
+SystemScripts::SystemScripts(QObject *parent) : QObject(parent) {}
 
 
 QString SystemScripts::GetCommand() {
     return command;
 }
+
 void SystemScripts::SetCommand(QString str) {
-    qDebug() << str;
     command = str;
 }
+
 QString SystemScripts::GetResult() {
     return result;
 }
+
 void SystemScripts::invoke () {
     result = command + QString(" > ") + QString(fileName.c_str());
     system(qPrintable(result));

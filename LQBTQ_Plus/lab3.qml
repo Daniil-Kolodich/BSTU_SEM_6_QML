@@ -22,28 +22,23 @@ Item {
             if (currentPressedButton === 0)
                 return;
             if (currentPressedButton === 1 && event.key === Qt.Key_1) {
-                console.log("one pressed");
                 keyboardHandler.flush();
-                lab3KeyboardResult.text = "";
             }
             if (currentPressedButton === 2 && event.key === Qt.Key_CapsLock) {
-                console.log("caps pressed");
                 lab3KeyboardResult.text = "Caps Lock pressed";
             }
             if (currentPressedButton === 2 && event.key === Qt.Key_NumLock) {
-                console.log("num pressed");
                 lab3KeyboardResult.text = "Num Lock pressed";
             }
             if (currentPressedButton === 3 && event.key === Qt.Key_Escape) {
-                console.log("esc pressed");
                 keyboardHandler.invert();
-                lab3KeyboardResult.text = "";
             }
 
+            if (currentPressedButton === 2)
+                lab3KeyboardResult.text += "\nClick buttons for more info...";
+            else
+                lab3KeyboardResult.text = "Click buttons for more info...";
             currentPressedButton = 0;
-            if (lab3KeyboardResult.text.length !== 0)
-                lab3KeyboardResult.text += "\n";
-            lab3KeyboardResult.text += "Click buttons for more info...";
         }
     }
 

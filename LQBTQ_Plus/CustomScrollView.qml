@@ -15,9 +15,13 @@ Rectangle {
     ScrollView {
         width: parent.width
         height: parent.height
+        anchors.leftMargin: 10
         Text {
             text: _text
             color: _secondColor
+            font.family: "arial"
+            font.pointSize: 14
+            font.weight: Font.ExtraBold
         }
     }
 }

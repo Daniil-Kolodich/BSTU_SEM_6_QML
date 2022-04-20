@@ -12,8 +12,8 @@ Window {
     property string selectedColor: "black"
     property string selectedSecondColor: "white"
     visible: true
-    width: 1024
-    height: 800
+    minimumWidth: 1024
+    minimumHeight: 800
     color: "#000000"
     title: qsTr("LGBTQ+")
 
@@ -23,7 +23,7 @@ Window {
         x: 0
         y: 0
         width: parent.width
-        height: parent.height * 0.1
+        height: 130
         color: "black"
         z: 2
 
@@ -33,7 +33,7 @@ Window {
             anchors.top: parent.top
             width: parent.width / column.amount
             height: parent.height
-            _label: "Lab1"
+            _label: "Color Selector\nDynamic property\nDMESG"
             _color: selectedColor
             _secondColor: selectedSecondColor
             onClicked: {
@@ -46,7 +46,7 @@ Window {
             anchors.top: parent.top
             width: parent.width / column.amount
             height: parent.height
-            _label: "Lab2"
+            _label: "Devices\nCPU\nMemory"
             _color: selectedColor
             _secondColor: selectedSecondColor
 
@@ -60,7 +60,7 @@ Window {
             anchors.top: parent.top
             width: parent.width / column.amount
             height: parent.height
-            _label: "Lab3"
+            _label: "Keyboard"
             _color: selectedColor
             _secondColor: selectedSecondColor
 

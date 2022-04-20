@@ -25,7 +25,12 @@ Item {
             anchors.top: parent.top
 
             onClicked: {
-                lab4InfoViewer.text = "also info"
+                lab4InfoViewer.text = "
+1.Используемая технология: 3LCD
+2. Способы подключения: HDMI, VGA, Video, USB Display,
+    USB, LAN, Wi-Fi.
+3. Что можно отображать: Экран телефона или компьютера,
+    Фотографии, Видео(.avi), PDF, Web pages, Камеру и др.";
             }
         }
 
@@ -39,7 +44,14 @@ Item {
             anchors.left: lab4NavButton1.right
             anchors.top: parent.top
             onClicked: {
-                lab4InfoViewer.text = "rs info"
+                lab4InfoViewer.text = "
+1. Произвести внутренюю(аппаратную) коммутацию необходимых сигналов;
+2. Произвести внутреннюю(программную) коммутацию сигналов порта
+    с помощью регистров конфигурирования выводов;
+3. Произвести программирование последовательного порта;
+4. Записать в исходную ячейку(4100h) передаваемого число;
+5. Выполнить программу передачи байта;
+6. Убедиться, что переданный байт находиться в ячейке 4200h;"
             }
         }
 
@@ -54,7 +66,7 @@ Item {
             anchors.top: parent.top
 
             onClicked: {
-                lab4InfoViewer.text = "git info"
+                lab4InfoViewer.text = "https://github.com/Daniil-Kolodich"
             }
         }
     }
@@ -69,7 +81,7 @@ Item {
             width: parent.width
             height: parent.height
             color: window.selectedSecondColor
-            text: ""
+            text: "Press any button to get more info..."
             font.family: "arial"
             font.pointSize: 20
             font.weight: Font.ExtraBold
