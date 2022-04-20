@@ -3,7 +3,7 @@ import QtQuick 2.5
 import QtQuick.Controls 1.4
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
-//import SystemScripts 1.0
+import SystemScripts 1.0
 //import KeyboardHandler 1.0
 
 
@@ -100,9 +100,9 @@ Window {
         }
     }
 
-    Rectangle {
+    SystemScripts {
         id: systemScripts
-        property string command: ""
+        command: ""
     }
 
     Rectangle {
