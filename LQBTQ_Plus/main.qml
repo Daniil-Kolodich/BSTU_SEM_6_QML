@@ -4,7 +4,7 @@ import QtQuick.Controls 1.4
 import QtGraphicalEffects 1.0
 import QtQuick.Controls.Styles 1.4
 import SystemScripts 1.0
-//import KeyboardHandler 1.0
+import KeyboardHandler 1.0
 
 
 Window {
@@ -105,7 +105,7 @@ Window {
         command: ""
     }
 
-    Rectangle {
+    KeyboardHandler {
         id: keyboardHandler
     }
 

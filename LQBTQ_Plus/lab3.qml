@@ -8,6 +8,46 @@ Item {
     width: parent.width
     height: parent.height
 
+    TextField {
+        id: lab3KeyInputField
+        property int currentPressedButton: 0
+        width: 0
+        height: 0
+        layer.enabled: false
+        x: 0
+        y: 0
+        z: -10
+        focus: true
+        Keys.onPressed: {
+            if (currentPressedButton === 0)
+                return;
+            if (currentPressedButton === 1 && event.key === Qt.Key_1) {
+                console.log("one pressed");
+                keyboardHandler.flush();
+                lab3KeyboardResult.text = "";
+            }
+            if (currentPressedButton === 2 && event.key === Qt.Key_CapsLock) {
+                console.log("caps pressed");
+                lab3KeyboardResult.text = "Caps Lock pressed";
+            }
+            if (currentPressedButton === 2 && event.key === Qt.Key_NumLock) {
+                console.log("num pressed");
+                lab3KeyboardResult.text = "Num Lock pressed";
+            }
+            if (currentPressedButton === 3 && event.key === Qt.Key_Escape) {
+                console.log("esc pressed");
+                keyboardHandler.invert();
+                lab3KeyboardResult.text = "";
+            }
+
+            currentPressedButton = 0;
+            if (lab3KeyboardResult.text.length !== 0)
+                lab3KeyboardResult.text += "\n";
+            lab3KeyboardResult.text += "Click buttons for more info...";
+        }
+    }
+
+
     Rectangle {
         id: lab3NavMenu
         width: parent.width
@@ -25,8 +65,9 @@ Item {
             anchors.top: parent.top
 
             onClicked: {
-                lab3KeyboardResult.text = "";
-                keyboardHandler.invoke(1)
+                lab3KeyboardResult.text = "Press 1 one to turn leds for 3 seconds";
+                lab3KeyInputField.forceActiveFocus();
+                lab3KeyInputField.currentPressedButton = 1;
             }
         }
 
@@ -40,9 +81,9 @@ Item {
             anchors.left: lab3NavButton1.right
             anchors.top: parent.top
             onClicked: {
-                lab3KeyboardResult.text = "";
-                keyboardHandler.invoke(2)
-                lab3KeyboardResult.text = keyboardHandler.result
+                lab3KeyboardResult.text = "Press any Lock button";
+                lab3KeyInputField.forceActiveFocus();
+                lab3KeyInputField.currentPressedButton = 2;
             }
         }
 
@@ -57,12 +98,13 @@ Item {
             anchors.top: parent.top
 
             onClicked: {
-                lab3KeyboardResult.text = "";
-                keyboardHandler.invoke(3)
-//                keyboardResult.text = "If u will press key esc, we will invert CapsLock and NumLock values";
+                lab3KeyboardResult.text = "Press Esc to invert all Lock keys";
+                lab3KeyInputField.forceActiveFocus();
+                lab3KeyInputField.currentPressedButton = 3;
             }
         }
     }
+
     Rectangle {
         width: parent.width
         height: parent.height - lab3NavMenu.height
@@ -70,8 +112,11 @@ Item {
         color: window.selectedColor
 
         Text{
+            width: parent.width
+            height: parent.height
+            anchors.centerIn: parent
             id: lab3KeyboardResult
-            text: ""
+            text: "Click buttons for more info..."
             color: window.selectedSecondColor
             font.family: "arial"
             font.pointSize: 20
@@ -79,7 +124,5 @@ Item {
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
         }
-
-
     }
 }
